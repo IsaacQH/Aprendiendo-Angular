@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";       //Trae el objeto component
+import { Component, OnInit, DoCheck, OnDestroy } from "@angular/core";       //Trae el objeto component
 
 @Component({
     selector: 'videojuego',           //Dice el nombre del compoente para llamarlo en otros archivos
@@ -6,7 +6,7 @@ import { Component } from "@angular/core";       //Trae el objeto component
     standalone: true
 })
 
-export class VideojuegoComponent{          //Exportamos el compoente como VidejuegoComponent
+export class VideojuegoComponent implements OnInit,DoCheck,OnDestroy{          //Exportamos el compoente como VidejuegoComponent
 
  public titulo: string;                   //Defiiniendo propiedades
  public listado: string;
@@ -16,4 +16,21 @@ export class VideojuegoComponent{          //Exportamos el compoente como Videju
     this.listado = "Lista de juegos: "
     console.log("Componente videojuego cargado");
  }
+
+ ngOnInit() {
+     console.log("OnInit ejecutado en Videojuego")
+ }
+
+ ngDoCheck(){
+    console.log("DoCheck ejecutado en Videojuego")
+ }
+
+ cambiarTitulo(){
+    this.titulo = 'Nuevo titulo del comp'
+ }
+
+ ngOnDestroy() {
+     console.log("OnDestroy ejecutado en Videojuego")
+ }
+
 }

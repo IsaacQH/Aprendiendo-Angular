@@ -15,4 +15,9 @@ import { CursosComponent } from './cursos/cursos.component';
 })
 export class AppComponent {
   public title = 'Master Angular';    //Exporta variable title para poder ser modificada directamente y añade al app.component.html
+  public mostrar_videojuegos : boolean = true;
+
+  ocultarVideojuegos(val: boolean){
+    this.mostrar_videojuegos = val
+  }
 } 
