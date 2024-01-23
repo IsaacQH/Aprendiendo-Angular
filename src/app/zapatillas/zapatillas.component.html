@@ -1,6 +1,32 @@
 <h2>{{titulo}}</h2>
-<p>holsasd</p>
+
+<div>
+   Compra las zapatillas de las siguientes marcas:
+   <ul>
+      <li *ngFor = "let mar of marcas; let indice = index"> {{indice + ' - '+ mar}} </li>
+   </ul>
+</div>
+
+
+<p>Lista de Modelos dispoibles</p>
 <ul>
-   <li *ngFor = "let variable of zapatillas">{{variable.nombre}} - <strong>{{variable.precio}}</strong>
-</li>
+   <li *ngFor = "let variable of zapatillas">
+
+      <span [ngStyle] = "{
+         'text-decoration' : !variable.stock ? 'line-through' : 'none'}"
+         >{{variable.nombre}} - <strong>$ {{variable.precio}} </strong> </span>
+      
+      <span *ngIf = "variable.precio <= 900" 
+      [style.color] = "variable.precio  <= 900 ? 'green' : 'black'"
+      > ¡EN OFERTA!</span>
+
+   </li>
+</ul>
+
+<p>El color de la mayoría de nuestras zapatillas es:</p>
+<ul [ngSwitch]="color">
+   <li *ngSwitchCase="'yellow'" > El color predominante es el <span [style.background] = "color">Amarillo</span> </li>
+   <li *ngSwitchCase="'red'"> El color predominante es el <span [style.background] = "color">Rojo</span></li>
+   <li *ngSwitchCase="'blue'"> El color predominante es el <span [style.background] = "color">Azul</span></li>
+   <li *ngSwitchCase="'black'"> El color predominante es el <span [style.background] = "color">Negro</span></li>
 </ul>
