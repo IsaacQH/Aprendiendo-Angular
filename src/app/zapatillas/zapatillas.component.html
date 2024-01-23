@@ -1,7 +1,6 @@
-<h2>Zapatillas</h2>
-
+<h2>{{titulo}}</h2>
+<p>holsasd</p>
 <ul>
-    <li>Adidas</li>
-    <li>Nike</li>
-    <li>Puma</li>
+   <li *ngFor = "let variable of zapatillas">{{variable.nombre}} - <strong>{{variable.precio}}</strong>
+</li>
 </ul>

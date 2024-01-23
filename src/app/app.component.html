@@ -1,16 +1,24 @@
-<div>
+<div [ngStyle]="{
+  'background': config.fondo,
+  'padding': '20px',
+  'border': '5px solid black',
+  'border-color': config.color
+}">
+
   <h1> Bienvenido al {{ title }} </h1>
   <br/>
   <p>
-    Vamos a aprender Angular juntos.
+   {{descripcion}}
   </p>
 
+  <zapatilla></zapatilla>
+  <!--
   <button (click) = "ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
   <button (click) = "ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
 
   <videojuego *ngIf="mostrar_videojuegos"></videojuego>
-  <zapatilla></zapatilla>
-  <cursos></cursos>
+  
+  <cursos></cursos>  -->
 
 
 </div>
