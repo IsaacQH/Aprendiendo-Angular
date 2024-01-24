@@ -4,7 +4,7 @@
 <!-- Seccion de marcas-->
 <h3>Añadir marca</h3>
 <p>
-   <input type = "text" [(ngModel)] = "mi_marca" />
+   <input type = "text" [(ngModel)] = "mi_marca" (keyup.enter) = "mostrarPalabra()"/>
    <button (click) = "getMar()">Mostrar</button>
    <button (click) = "addMar()">Add Marca</button>
 </p>
@@ -15,7 +15,11 @@
 <div>
    Compra las zapatillas de las siguientes marcas:
    <ul>
-      <li *ngFor = "let mar of marcas; let indice = index"> {{indice + ' - '+ mar}} </li>
+      <li *ngFor = "let mar of marcas; let indice = index"
+      > {{indice + ' - '+ mar}} 
+      <button (click) = "delMar(indice)">Borrar</button>
+   </li>
+      
    </ul>
 </div>
 

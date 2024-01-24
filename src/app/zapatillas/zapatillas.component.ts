@@ -45,12 +45,23 @@ export class ZapatillasComponent implements OnInit{
         console.log(this.marcas)                          //Imprime array
     }
     
-    getMar(){
+    getMar(){                                             //Muestra el valor de mi marca en un alert
         alert(this.mi_marca)
     }
 
-    addMar(){
+    addMar(){                                             //Añade mi_marca del input al array marcas
         this.marcas.push(this.mi_marca)
     }
 
+    delMar(indice:number){                                //Elimina el valor del indice mostrado en marca
+        this.marcas.splice(indice, 1)
+    }
+
+    onBlur(){                                             //Muestra cuando deseleccionas el input
+        console.log("Has salido del input")
+    }
+
+    mostrarPalabra(){
+        alert("Pulsaste enter")
+    }
 }
