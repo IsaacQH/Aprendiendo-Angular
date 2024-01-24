@@ -1,5 +1,17 @@
 <h2>{{titulo}}</h2>
 
+
+<!-- Seccion de marcas-->
+<h3>Añadir marca</h3>
+<p>
+   <input type = "text" [(ngModel)] = "mi_marca" />
+   <button (click) = "getMar()">Mostrar</button>
+   <button (click) = "addMar()">Add Marca</button>
+</p>
+
+<h4>{{mi_marca}}</h4>
+
+
 <div>
    Compra las zapatillas de las siguientes marcas:
    <ul>
@@ -7,7 +19,7 @@
    </ul>
 </div>
 
-
+<!-- Seccion de lista de tenis-->
 <p>Lista de Modelos dispoibles</p>
 <ul>
    <li *ngFor = "let variable of zapatillas">
@@ -23,7 +35,12 @@
    </li>
 </ul>
 
+
+<!-- Seccion de color-->
 <p>El color de la mayoría de nuestras zapatillas es:</p>
+
+<input type="text" [(ngModel)] = "color"/>
+
 <ul [ngSwitch]="color">
    <li *ngSwitchCase="'yellow'" > El color predominante es el <span [style.background] = "color">Amarillo</span> </li>
    <li *ngSwitchCase="'red'"> El color predominante es el <span [style.background] = "color">Rojo</span></li>

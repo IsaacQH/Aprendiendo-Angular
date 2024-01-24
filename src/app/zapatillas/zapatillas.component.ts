@@ -1,10 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { Zapatilla } from "../models/zapatilla";
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'zapatilla',
-    imports: [CommonModule],
+    imports: [CommonModule, FormsModule],
     standalone: true,
     templateUrl: './zapatillas.component.html'
 })
@@ -14,6 +15,7 @@ export class ZapatillasComponent implements OnInit{
     public zapatillas:Array<Zapatilla>      //Se crea como array
     public marcas:String[]
     public color:string
+    public mi_marca:string 
 
     constructor(){
         this.zapatillas = [
@@ -24,6 +26,7 @@ export class ZapatillasComponent implements OnInit{
         ]
         this.marcas = new Array()
         this.color ='blue'
+        this.mi_marca = 'Fila'
     }
 
     ngOnInit() {
@@ -40,6 +43,14 @@ export class ZapatillasComponent implements OnInit{
             //console.log(index)                          //imprime index
         })
         console.log(this.marcas)                          //Imprime array
+    }
+    
+    getMar(){
+        alert(this.mi_marca)
+    }
+
+    addMar(){
+        this.marcas.push(this.mi_marca)
     }
 
 }
