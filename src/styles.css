@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.altroPrecio{
+    color:gray;
+    font-size:18px;
+}
+
+
+.fondoR{
+    background-color: red;
+}
+
+.fondoA{
+    background-color: yellow;
+}
+
