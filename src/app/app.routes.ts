@@ -12,8 +12,10 @@ import { homeComponent } from './home/home.component';
 //Array de rutas
 export const routes: Routes = [
     {path: '', component: homeComponent},                       //Este carga la ruta vacia, la home
+    {path: 'home', component: homeComponent},                       //Este carga la ruta vacia, la home
     {path: 'zapatillas', component: ZapatillasComponent},       //Este carga componente zapatilla
     {path: 'videojuego', component: VideojuegoComponent},       //Este carga componente videojuego
     {path: 'curso', component: CursosComponent},                //Este carga componente curso
+    {path: 'curso/:nombre/:followers', component: CursosComponent},                //Este carga componente curso con parámetro
     {path: '**' , component: homeComponent}                        //Ruta en caso de error
 ];
