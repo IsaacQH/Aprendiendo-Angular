@@ -30,7 +30,7 @@ export class ZapatillasComponent implements OnInit{
 
     ngOnInit() {
         this.zapatillas = this._zapatillaService.getZapillas()
-        alert(this._zapatillaService.getTexto())
+        //alert(this._zapatillaService.getTexto())
         this.getMarcas()
     }
 

@@ -8,6 +8,7 @@ import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { homeComponent } from './home/home.component';
+import { ExternoComponent } from './externo/externo.component';
 
 //Array de rutas
 export const routes: Routes = [
@@ -17,5 +18,6 @@ export const routes: Routes = [
     {path: 'videojuego', component: VideojuegoComponent},       //Este carga componente videojuego
     {path: 'curso', component: CursosComponent},                //Este carga componente curso
     {path: 'curso/:nombre/:followers', component: CursosComponent},                //Este carga componente curso con parámetro
+    {path: 'externo', component: ExternoComponent},
     {path: '**' , component: homeComponent}                        //Ruta en caso de error
 ];
