@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PeticionesServices } from "../services/peticiones.service";
+import { CalculadoraPipe } from "../pipes/calculadora.pipe";
 
 @Component({
     selector: 'externo',
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, CalculadoraPipe],
     standalone: true,
     templateUrl: './externo.component.html',
     providers: [PeticionesServices]
