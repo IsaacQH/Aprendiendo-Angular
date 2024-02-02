@@ -19,4 +19,15 @@ export class PeticionesServices{
         return this._http.get(this.url + "api/users/" + userId)
     }
 
+
+    addUser(user:any):Observable<any> {      
+         let params = JSON.stringify(user)       //Tenemos que mandar los datos como JSON string
+         let headers = new HttpHeaders().set('Content-Type', 'application/json')
+         //Indica las cabeceras, haciendo un tipo de peticion application/json
+
+         return this._http.post(this.url + "api/users", params, {headers:headers})
+                              //(Url,  que se subira, cabeceras)
+    }
+
+
 }

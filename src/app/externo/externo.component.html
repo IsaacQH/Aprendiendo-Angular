@@ -1,7 +1,28 @@
+
+<h2>Crear usuario</h2>
+<form #newUser = "ngForm" (ngSubmit)="onSubmit(newUser)">
+    <p>
+        <label for="name">Nombre</label> <br>
+        <input type="text" name = "name" #name = "ngModel" [(ngModel)] = "new_user.name" required><br> <!-- Hace que guarde el valor introducido-->
+        <span *ngIf="name.touched && !name.valid">Campo inválido</span>
+    </p>
+    <p>
+        <label for="job">Trabajo</label> <br>
+        <input type="text" name = "job" #jobe = "ngModel" [(ngModel)] = "new_user.job" required> <br> <!-- Hace que guarde el valor introducido-->
+        <span *ngIf="jobe.touched && !jobe.valid">Campo inválido</span>
+    </p>
+
+    <input type="submit" value ="Add" [disabled]="!newUser.form.valid">
+
+    <div *ngIf="usuario_guardado">
+        <h3>{{usuario_guardado.name}} - Trabajo en {{usuario_guardado.job}}</h3>
+    </div>
+</form>
+
+
+<hr>
+
 <input type = "text" [(ngModel)] = "userId" (keyup.enter) = "cargaUsuario()">
-
-
-
 
 <div *ngIf="!user"> Cargando...</div>
 
@@ -15,3 +36,5 @@
 <h3>{{fecha | date:'dd/MM//yy'}}</h3>
 <p>{{'HOLA pipe' | uppercase}}</p>
 <p>{{4 | calculadora: 4}}</p>
+
+
