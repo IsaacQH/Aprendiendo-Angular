@@ -1,6 +1,6 @@
 //Importar modulos de router de angular
 
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
 //Importar conmponentes (carpetas.componente)
 
@@ -9,6 +9,7 @@ import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { homeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 //Array de rutas
 export const routes: Routes = [
@@ -19,5 +20,6 @@ export const routes: Routes = [
     {path: 'curso', component: CursosComponent},                //Este carga componente curso
     {path: 'curso/:nombre/:followers', component: CursosComponent},                //Este carga componente curso con parámetro
     {path: 'externo', component: ExternoComponent},
+    {path: 'contacto', component: ContactoComponent},
     {path: '**' , component: homeComponent}                        //Ruta en caso de error
 ];
